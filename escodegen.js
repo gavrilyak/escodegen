@@ -796,7 +796,12 @@
         } else {
             result = ['('];
             for (i = 0, len = node.params.length; i < len; ++i) {
-                result.push(generateIdentifier(node.params[i]));
+                var param = node.params[i];
+                if(param.type == Syntax.Identifier){
+                  result.push(generateIdentifier(param));
+                }else{
+                  result.push(generateExpression(param, {}));
+                }
                 if (i + 1 < len) {
                     result.push(',' + space);
                 }
