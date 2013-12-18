@@ -117,7 +117,7 @@
 
     Precedence = {
         Sequence: 0,
-        Yield: 1,
+        Yield: 0,
         Assignment: 1,
         Conditional: 2,
         ArrowFunction: 2,
